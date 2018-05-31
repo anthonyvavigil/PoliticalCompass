@@ -1,0 +1,5 @@
+//Topic	Question text	Value type(capitalist (international), capitalist (domestic), interventionist, social)	Weight (1-5)
+International Relations	The United States should increase its involvement in the Syrian Civil War	Interventionist	2
+Taxation	The United States should reduce tax on tobacco and alcohol products	Capitalist (domestic)	4
+Taxation	The United States should reduce general income tax	Capitalist (domestic)	3
+This is a broken line
