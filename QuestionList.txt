@@ -2,4 +2,26 @@
 International Relations	The United States should increase its involvement in the Syrian Civil War	Interventionist	2
 Taxation	The United States should reduce tax on tobacco and alcohol products	Capitalist (domestic)	4
 Taxation	The United States should reduce general income tax	Capitalist (domestic)	3
-This is a broken line
+Taxation	The United States should reduce inheritance tax	Capitalist (domestic)	3
+Taxation	The United States should reduce sales tax	Capitalist (domestic)	1
+International Relations	The United States should lead peace talks with North Korea	Interventionist	4
+International Relations	The United States should pull out of the Iran Nuclear Deal	Interventionist	3
+International Relations	The United States should reduce its military contributions to the UN	Interventionist	3
+International Relations	The United States should reduce its financial contributions to the UN	Interventionist	2
+Capitalist (international)	The WTO should not regulate the use of plant genetic resources	Capitalist (international)	2
+Capitalist (international)	The United States should reduce its sanctions on Russia	Capitalist (international)	4
+Capitalist (international)	The United States should reduce its sanctions on China	Capitalist (international)	4
+Civil Rights	The United States should limit marriage to straight couples	Social	3
+Civil Rights	The United States should prohibit affirmative action programs in university applications	Social	2
+Civil Rights	The United States should prohibit the use of racial information in hiring employees	Social	2
+Civil Rights	The United States should decrease the scope of hate crime laws	Social	4
+Religious Freedom	The United States should prohibit religious organizations from recieving tax deductions	Social	3
+Religious Freedom	One nation under god' should remain the motto of the United States	Social	1
+Religious Freedom	The United States should prohibit burqas in public spaces	Social	3
+Religious Freedom	The United States should prohibit hijabs in public spaces	Social	4
+Welfare	The United States should reduce the scope of unemployment aid programs	Capitalist (domestic)	3
+Welfare	The United States should fully privatize healthcare	Capitalist (domestic)	4
+Welfare	The United States should reduce the scope of food assistance programs	Capitalist (domestic)	4
+Education	The United States should reduce federal funding of education	Capitalist (domestic)	3
+Education	The United States should implement voucher programs for school choice	Social	2
+Education	The United States should increase spending allocation for charter schools	Capitalist (domestic)	3
