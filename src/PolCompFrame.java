@@ -17,6 +17,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ComponentEvent;
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -134,7 +135,7 @@ public class PolCompFrame extends javax.swing.JFrame {
     
     public static void runMeth() {
     	user = new User();
-    	questions = fetchQuestions();
+    	questions = parseQuestions();
     	user.calculateModerateScores(questions);
     	sortQuestionsByTopic();
     	
@@ -156,7 +157,12 @@ public class PolCompFrame extends javax.swing.JFrame {
     		answeredQuestions.add(temp);
     		updateUserData(temp);
     		getNextQuestion();
-    	} else {
+    	} else if(cur.substring(0, 1).toUpperCase().equals("B")) {
+    		if(!answeredQuestions.isEmpty()) {
+    			previousQuestion();
+    		}
+    	}
+    	else {
     		jTextArea1.append("Error: Did not recognize answer, please try again (note: answers must be between 1 and 5, press enter to move to next question)\n");
     		String temp = "Question " + (answeredQuestions.size()+1) + " of " + ((unansweredQuestions.size()) + (answeredQuestions.size())) + ": ";
     		jTextArea1.append(temp + unansweredQuestions.get(0).text + "\n");
@@ -165,6 +171,21 @@ public class PolCompFrame extends javax.swing.JFrame {
     
     public static void updateUserData(Question answered) {
     	user.incrementScore(answered);
+    }
+    
+    public static void previousQuestion() {
+    	unansweredQuestions.add(0, answeredQuestions.get(answeredQuestions.size()-1)); // takes the last question from answered questions and moves it to unanswered
+    	answeredQuestions.remove(answeredQuestions.size()-1); // removes the last question from answered questions
+    	 
+    	//need to remove correct amount from user's score
+    	
+    	// sets the text area to remove the last two lines
+    	String a = jTextArea1.getText();
+    	String[] aSplit = a.split("\n");
+    	
+    	
+    	
+    	getNextQuestion();
     }
     
     public static void printUserData() {
@@ -196,7 +217,7 @@ public class PolCompFrame extends javax.swing.JFrame {
     		endTest();
     	} else {
     		String temp = "Question " + (answeredQuestions.size()+1) + " of " + ((unansweredQuestions.size()) + (answeredQuestions.size())) + ": ";
-    		jTextArea1.append(temp + unansweredQuestions.get(0).text + "\n");
+    		jTextArea1.append(temp + unansweredQuestions.get(0).text + " (type 'b' to go back to the previous question)\n");
     	}
     }
     
@@ -204,10 +225,11 @@ public class PolCompFrame extends javax.swing.JFrame {
     	jTextArea1.append("*****\nTest over\n*****\n");
     	user.calculateAdjustedScores();
     	jTextArea1.append("Alignment Scores: \n");
-    	jTextArea1.append("Domestic Capitalism Score: " + user.adjustedDCScore + "\n");
-    	jTextArea1.append("International Capitalism Score: " + user.adjustedICScore + "\n");
-    	jTextArea1.append("Interventionism Score: " + user.adjustedIntervScore + "\n");
-    	jTextArea1.append("Social Progressiveness Score: " + user.adjustedSocScore + "\n");
+    	DecimalFormat df = new DecimalFormat("#.##");
+    	jTextArea1.append("Domestic Capitalism Score: " + df.format(user.adjustedDCScore) + "\n");
+    	jTextArea1.append("International Capitalism Score: " + df.format(user.adjustedICScore) + "\n");
+    	jTextArea1.append("Interventionism Score: " + df.format(user.adjustedIntervScore) + "\n");
+    	jTextArea1.append("Social Progressiveness Score: " + df.format(user.adjustedSocScore) + "\n");
     	interpretScores();
     	printUserData();
     }
@@ -302,7 +324,7 @@ public class PolCompFrame extends javax.swing.JFrame {
     	jTextArea1.append("Alignments: \n" + a1 + "\n" + b1 + "\n" + c1 + "\n" + d1 + "\n");
     }
     
-    public static ArrayList<Question> fetchQuestions() { // handles question fetching
+    public static ArrayList<Question> parseQuestions() { // handles question fetching
     	Scanner scn = null;
     	ArrayList<Question> qs = new ArrayList();
     	File file = new File("QuestionList.txt");

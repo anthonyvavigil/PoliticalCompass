@@ -17,4 +17,10 @@ public class Question {
 		isAnswered = true;
 		this.answer = answer;
 	}
+	public void setAnswered(boolean ans) {
+		isAnswered = ans;
+	}
+	public void setAnswer(int ans) {
+		answer = ans;
+	}
 }
