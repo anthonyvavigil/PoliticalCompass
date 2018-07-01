@@ -1,4 +1,3 @@
-//Topic	Question text	Value type(capitalist (international), capitalist (domestic), interventionist, social)	Weight (1-5)
 International Relations	The United States should increase its involvement in the Syrian Civil War	Interventionist	2
 Taxation	The United States should reduce tax on tobacco and alcohol products	Capitalist (domestic)	4
 Taxation	The United States should reduce general income tax	Capitalist (domestic)	3
@@ -15,8 +14,8 @@ Civil Rights	The United States should limit marriage to straight couples	Social	
 Civil Rights	The United States should prohibit affirmative action programs in university applications	Social	2
 Civil Rights	The United States should prohibit the use of racial information in hiring employees	Social	2
 Civil Rights	The United States should decrease the scope of hate crime laws	Social	4
-Religious Freedom	The United States should prohibit religious organizations from recieving tax deductions	Social	3
-Religious Freedom	One nation under god' should remain the motto of the United States	Social	1
+Religious Freedom	The United States should prohibit religious organizations from receiving tax deductions	Social	3
+Religious Freedom	The United States should rule in favor of masterpiece cakeshop 	Social	1
 Religious Freedom	The United States should prohibit burqas in public spaces	Social	3
 Religious Freedom	The United States should prohibit hijabs in public spaces	Social	4
 Welfare	The United States should reduce the scope of unemployment aid programs	Capitalist (domestic)	3
@@ -25,3 +24,19 @@ Welfare	The United States should reduce the scope of food assistance programs	Ca
 Education	The United States should reduce federal funding of education	Capitalist (domestic)	3
 Education	The United States should implement voucher programs for school choice	Social	2
 Education	The United States should increase spending allocation for charter schools	Capitalist (domestic)	3
+Immigration	The United States should decrease quotas on refugees 	Social	3
+Education	The United States should decrease funding for Title IX programs on college campuses	Social	2
+Crime	The United States should increase the mandatory minimum sentence for possession of marijuana	Social	2
+Crime	The United States should increase enforcement of drug laws in states that have legalized marijuana	Social	3
+Crime	The United States should reduce sentencing for domestic violence	Social	3
+Immigration	The United States should build a border wall	Social	4
+Immigration	The United States should increase funding for Southern Border Protection	Social	3
+2nd Amendment	The United States should loosen regulations on firearms	Social	4
+Education	The United States should mandate the pledge of allegiance in schools	Social	5
+Immigration	The United States should increase funding for DEA operations targeted at opiates	Social	3
+Civil Rights	The United States should increase regulations on NSA operations targeted at US citizens	Social	2
+Capiatlist (international)	The United States should re-affirm its commitment to NAFTA	Capitalist (international)	3
+Capitalist (domestic)	The United States should decrease corporate taxes	Capitalist (domestic)	4
+Capitalist (international)	Corporations should be allowed to use tax havens	Capitalist (internatonal)	1
+Civil Rights	The gender wage gap is not real	Social	1
+Civil Rights	The United States should ban abortion in all cases besides the first trimester	Social	2
