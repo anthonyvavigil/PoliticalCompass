@@ -171,20 +171,24 @@ public class PolCompFrame extends javax.swing.JFrame {
     
     public static void updateUserData(Question answered) {
     	user.incrementScore(answered);
+    	printUserData();
     }
     
-    public static void previousQuestion() {
+    public static void previousQuestion() {    	
     	unansweredQuestions.add(0, answeredQuestions.get(answeredQuestions.size()-1)); // takes the last question from answered questions and moves it to unanswered
     	answeredQuestions.remove(answeredQuestions.size()-1); // removes the last question from answered questions
-    	 
-    	//need to remove correct amount from user's score
+    	
+    	
+    	// resets user score
+    	user.decrementScore(unansweredQuestions.get(0));
+    	unansweredQuestions.get(0).setAnswered(false);
     	
     	// sets the text area to remove the last two lines
     	String a = jTextArea1.getText();
     	String[] aSplit = a.split("\n");
     	
     	
-    	
+    	printUserData();
     	getNextQuestion();
     }
     
@@ -199,6 +203,7 @@ public class PolCompFrame extends javax.swing.JFrame {
     	System.out.println("international capitalism score : " + user.internationalCapitalismScore);
     	System.out.println("interventionism score : " + user.interventionismScore);
     	System.out.println("social score : " + user.socialScore);
+    	System.out.println("--------------------------------------------------------------------------------------------------------");
     }
     
     
@@ -232,7 +237,10 @@ public class PolCompFrame extends javax.swing.JFrame {
     	jTextArea1.append("Social Progressiveness Score: " + df.format(user.adjustedSocScore) + "\n");
     	interpretScores();
     	printUserData();
+    	jTextArea1.append("\n\n**\nTEST HAS ENDED\n**\n\n");
+    	runMeth();
     }
+
     
     public static void interpretScores() { // calculates scores and changes them to strings
     	//domestic capitalism score

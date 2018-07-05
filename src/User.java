@@ -68,6 +68,32 @@ public class User {
 		}
 	}
 	
+	public void decrementScore(Question question) {
+		String type = question.type;
+		if(type.toUpperCase().equals("CAPITALIST (DOMESTIC)")) {
+			decrementDCScore(question.weight, question.answer);
+		} else if(type.toUpperCase().equals("CAPITALIST (INTERNATIONAL)")) {
+			decrementICScore(question.weight, question.answer);
+		} else if(type.toUpperCase().equals("INTERVENTIONIST")) {
+			decrementIntervScore(question.weight, question.answer);
+		} else if(type.toUpperCase().equals("SOCIAL")) {
+			decrementSocScore(question.weight, question.answer);
+		}
+	}
+	
+	public void decrementDCScore(double weight, double answer) {
+		domesticCapitalismScore -= (weight*answer);
+	}
+	public void decrementICScore(double weight, double answer) {
+		internationalCapitalismScore -= (weight*answer);
+	}
+	public void decrementIntervScore(double weight, double answer) {
+		interventionismScore -= (weight*answer);
+	}
+	public void decrementSocScore(double weight, double answer) {
+		socialScore -= (weight*answer);
+	}
+	
 	public void incrementDCScore(double weight, double answer) {
 		domesticCapitalismScore = domesticCapitalismScore + (weight*answer);
 	}
@@ -84,10 +110,16 @@ public class User {
 	
 	// uses statistics to see how abnormal the user's political beliefs are
 	public void calculateAdjustedScores() {
-		adjustedDCScore = (domesticCapitalismScore-moderateDCScore)/(dcStD*2);
-		adjustedICScore = (internationalCapitalismScore-moderateICScore)/(icStD*2);
-		adjustedIntervScore = (interventionismScore-moderateIntervScore)/(intervStD*2);
-		adjustedSocScore = (socialScore-moderateSocScore)/(socStD*2);
+		adjustedDCScore = normDistMap(domesticCapitalismScore, moderateDCScore);
+		adjustedICScore = normDistMap(internationalCapitalismScore, moderateICScore);
+		adjustedIntervScore = normDistMap(interventionismScore, moderateIntervScore);
+		adjustedSocScore = normDistMap(socialScore, moderateSocScore);
+	}
+	
+	public static double normDistMap(double mod, double act) {
+		double stDev = ((5*mod)/4) - mod; 
+		double temp = (act-mod)/stDev;
+		return -1.0 * (temp/3.0);
 	}
 	
     public static double pdf(double x) {
